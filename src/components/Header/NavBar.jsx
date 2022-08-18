@@ -2,10 +2,10 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from "../assets/img/Mangadiction-logo.png";
+import logo from "../../assets/img/Mangadiction-logo.png";
+import CartWidget from './CartWidget';
 import styles from "./NavBar.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const NavBar = () => {
@@ -21,8 +21,7 @@ const NavBar = () => {
         <Nav.Link href="#features">Tienda</Nav.Link>
         <Nav.Link href="#pricing">Contacto</Nav.Link>
       </Nav>
-      
-      <FontAwesomeIcon className={`${styles.icon}`} icon={ faCartShopping } />
+      <CartWidget/>
     </Container>
   </Navbar>
   
