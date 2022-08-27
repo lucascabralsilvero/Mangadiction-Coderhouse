@@ -3,22 +3,24 @@ import Button from 'react-bootstrap/Button';
 import styles from "./ItemCount.module.scss";
 
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, onAdd }) => {
 
-    let [counter, setCounter] = useState(0); 
+    let [counter, setCounter] = useState(1); 
 
     let handlerAddition = () =>{
-            setCounter(counter + 1); 
+      if(counter < stock){
+        setCounter(counter + 1); 
+      }
     }; 
 
     let handlerSubstraction = () => {
-        if(counter > 0){
+        if(counter > 1){
             setCounter(counter - 1); 
         };
     };
 
   return (
-      <div className={` ${styles.count} d-flex align-items-center  flex-column justify-content-center` }>
+      <div className={` ${styles.count} d-flex mb-2 align-items-center  flex-column justify-content-center` }>
         <div >
           <Button onClick={handlerSubstraction} variant="primary">-</Button>
             <span className='mx-3'>
@@ -27,7 +29,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           <Button onClick = {handlerAddition} variant="primary">+</Button>
         </div>
         <div className='mt-3'>
-            <Button variant='info'>Agregar al carrito</Button>
+            <Button variant='secondary'>Agregar al carrito</Button>
         </div>
       </div>
   )
