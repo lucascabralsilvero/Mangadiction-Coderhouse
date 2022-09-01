@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import styles from "./ItemCount.module.scss";
 
 
-const ItemCount = ({ stock, onAdd }) => {
+const ItemCount = ({ stock }) => {
 
     let [counter, setCounter] = useState(1); 
 
@@ -20,16 +20,16 @@ const ItemCount = ({ stock, onAdd }) => {
     };
 
   return (
-      <div className={` ${styles.count} d-flex mb-2 align-items-center  flex-column justify-content-center` }>
-        <div >
-          <Button onClick={handlerSubstraction} variant="primary">-</Button>
+      <div className={` ${styles.count} d-flex  flex-column  ` }>
+        <div className='mb-3'>
+          <Button  onClick={handlerSubstraction} variant="secondary">-</Button>
             <span className='mx-3'>
                 {counter}
             </span>
-          <Button onClick = {handlerAddition} variant="primary">+</Button>
+          <Button onClick = {handlerAddition} variant="secondary">+</Button>
         </div>
-        <div className='mt-3'>
-            <Button variant='secondary'>Agregar al carrito</Button>
+        <div className='mb-3' >
+            <Button variant='primary'>Agregar al carrito</Button>
         </div>
       </div>
   )

@@ -13,6 +13,6 @@ export const pedirDatos = (param) => {
         } else{
           reject("Promesa rechazada")
         }
-      }, 2000)
+      }, 1000)
     })
   }
