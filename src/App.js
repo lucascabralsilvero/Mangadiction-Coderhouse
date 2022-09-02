@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from "./components/Main/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ItemDetailContainer from "./components/Main/ItemDetailContainer/ItemDetailContainer";
+import Footer from "./components/Main/Footer/Footer";
 
 
 
@@ -21,7 +22,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />  
         </Routes>
 
-
+        <Footer />
       </BrowserRouter>
   );
 }

@@ -5,7 +5,7 @@ import Item from '../Item/Item';
 
 const ItemList = ( {productos = []} ) => {
   return (
-    <div className='container '>
+    <div className= "container">
          <h2 className='text-center'>Productos</h2>
           <div className='row'>
             <div className='col-12 bg-light d-flex flex-wrap justify-content-between '>

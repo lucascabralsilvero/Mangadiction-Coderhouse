@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
   return (
-    <div  className={` ${styles.itemDetail} container  `}>
+    <div  className={` ${styles.itemDetail} container `}>
 
-     <div className='row d-flex '>
+     <div className="row d-flex">
         <div className="col-1">
         <Link className=' fs-5 text-danger' to={`/categorias/${item.categoria}`}> &laquo; Volver</Link>    
         </div>
@@ -20,8 +20,7 @@ const ItemDetail = ({item}) => {
              <p className='mt-3'>{item.desc}</p>
              <p> <b> Precio:</b> ${item.precio}</p>
              <p> <b> Stock: </b> {item.stock}</p>
-             <ItemCount stock= {item.stock} />
-               
+             <ItemCount stock= {item.stock} />           
         </div>
 
      </div>

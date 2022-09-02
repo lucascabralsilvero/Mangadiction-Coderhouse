@@ -30,13 +30,13 @@ const ItemDetailContainer = () => {
 
 
   return (
-    <div className>
+    <section className={`${styles.bodyHeight}`} >
       {
         loading 
         ? ( <Spinner className={`${styles.spinner}`} animation="border" variant="warning" />)
         : <ItemDetail item={item} />
       }
-    </div>
+    </section>
   )
 }
 
