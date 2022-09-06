@@ -13,6 +13,8 @@ const ItemDetailContainer = () => {
 
     const { itemId } = useParams();
 
+  
+
     useEffect(() => {
       
       setLoading(true);
@@ -25,7 +27,7 @@ const ItemDetailContainer = () => {
     .finally(() => {
       setLoading(false)
     })
-    }, [itemId]);
+    }, [itemId, setLoading]);
    
 
 

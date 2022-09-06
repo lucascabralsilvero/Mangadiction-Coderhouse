@@ -1,11 +1,11 @@
-import { React, useState } from 'react';
+import  React  from 'react';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import styles from "./ItemCount.module.scss";
 
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, counter, setCounter, handleAdd}) => {
 
-    let [counter, setCounter] = useState(1); 
 
     let handlerAddition = () =>{
       if(counter < stock){
@@ -19,6 +19,8 @@ const ItemCount = ({ stock }) => {
         };
     };
 
+  
+
   return (
       <div className={` ${styles.count} d-flex  flex-column  ` }>
         <div className='mb-3'>
@@ -29,7 +31,7 @@ const ItemCount = ({ stock }) => {
           <Button onClick = {handlerAddition} variant="secondary">+</Button>
         </div>
         <div className='mb-3' >
-            <Button variant='primary'>Agregar al carrito</Button>
+           <Link to="/cart"> <Button  onClick={handleAdd} variant='primary'>Agregar al carrito</Button> </Link>
         </div>
       </div>
   )

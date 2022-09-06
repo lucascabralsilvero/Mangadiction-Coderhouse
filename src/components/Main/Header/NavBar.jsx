@@ -21,8 +21,6 @@ const NavBar = () =>
           <Link to="categorias/Seinen" className='nav-link'>Seinen</Link>
           <Link to="categorias/Spokon" className='nav-link'>Spokon</Link>
           <Link to="categorias/Shounen" className='nav-link'>Shounen</Link>
-          
-          
         </Nav>
         <CartWidget />
       </Container>

@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import styles from "./ItemDetail.module.scss"; 
 import { Link } from "react-router-dom"; 
 
 
 const ItemDetail = ({item}) => {
+
+  const [counter, setCounter] = useState(1); 
+
+  const handleAdd = () => {
+   const itemToCart = {
+      nombre : item.nombre, 
+      precio: item.precio,
+      stock : item.stock
+    }
+
+    console.log(itemToCart);
+  }
+
+
   return (
     <div  className={` ${styles.itemDetail} container `}>
 
@@ -16,11 +30,15 @@ const ItemDetail = ({item}) => {
             <img className='img-fluid' src={item.img} alt="" />
         </div>
         <div className="col-8 ">
-             <h4 className='mt-2 '> <h1>{item.nombre}</h1></h4>
+             <h1 className='mt-2 '> {item.nombre}</h1>
              <p className='mt-3'>{item.desc}</p>
              <p> <b> Precio:</b> ${item.precio}</p>
              <p> <b> Stock: </b> {item.stock}</p>
-             <ItemCount stock= {item.stock} />           
+             <ItemCount 
+             stock= {item.stock}
+             counter = {counter}
+             setCounter={setCounter}
+             handleAdd = {handleAdd} />           
         </div>
 
      </div>
