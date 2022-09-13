@@ -54,6 +54,8 @@ export const CartProvider = ({children}) => {
           })
     }
 
+    
+
     useEffect(() => {
       localStorage.setItem('carrito', JSON.stringify(cart))
   }, [cart])
