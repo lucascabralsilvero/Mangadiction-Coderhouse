@@ -1,6 +1,5 @@
 import  React  from 'react';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 import styles from "./ItemCount.module.scss";
 
 
@@ -31,7 +30,7 @@ const ItemCount = ({ stock, counter, setCounter, handleAdd}) => {
           <Button onClick = {handlerAddition} variant="secondary">+</Button>
         </div>
         <div className='mb-3' >
-           <Link to="/cart"> <Button  onClick={handleAdd} variant='primary'>Agregar al carrito</Button> </Link>
+           <Button  onClick={handleAdd} variant='primary'>Agregar al carrito</Button>
         </div>
       </div>
   )
