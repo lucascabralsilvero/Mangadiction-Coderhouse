@@ -6,7 +6,7 @@ import empty from "../../assets/img/empty-cart.png"
 
 const Cart = () => {
 
-  const {cart, cartTotal, emptyCart, removeItem} = useCartContext();
+  const {cart, cartTotal, emptyCart, removeItem, priceProduct} = useCartContext();
 
   if(cart.length === 0){
       return(
@@ -35,7 +35,8 @@ const Cart = () => {
                   <h3 className='fs-3'>{item.nombre}</h3>
                  </div>  
                   <div className='col-2 mt-3'>
-                  <p>Precio: ${item.precio}</p>
+                  <p>Precio Unitario: ${item.precio}</p>
+                  <p>Precio Acumulado: ${priceProduct(item.id)}</p>
                   </div>
                    <div className='col-2 mt-3'>
                     <p>Cantidad: {item.counter}</p>

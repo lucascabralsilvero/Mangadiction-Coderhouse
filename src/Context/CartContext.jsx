@@ -37,6 +37,10 @@ export const CartProvider = ({children}) => {
         return cart.reduce((acc, item) => acc + item.counter * item.precio, 0)
     }
 
+    const priceProduct = (id) => {
+          return (cart.map((item) => item.id === id ? (item.counter * item.precio) : null ))
+    }
+
 
     const emptyCart = () => {
         Swal.fire({
@@ -68,7 +72,8 @@ export const CartProvider = ({children}) => {
             cartQuantity,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            priceProduct
           }}>
             {children}
         </CartContext.Provider>
