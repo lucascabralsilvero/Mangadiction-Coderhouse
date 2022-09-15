@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom"; 
-import { pedirDatos } from '../../../helpers/pedirDatos';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from 'react-bootstrap/Spinner';
-import styles from "./ItemDetailContainer.module.scss"
-
+import styles from "./ItemDetailContainer.module.scss";
+import {doc, getDoc} from "firebase/firestore";
+import {db} from "../../../firebase/firebaseConfig";
 
 const ItemDetailContainer = () => {
 
@@ -19,14 +19,17 @@ const ItemDetailContainer = () => {
       
       setLoading(true);
 
-      pedirDatos(true) 
-    .then((res) =>{
-        setItem(res.find((prod) => prod.id === Number(itemId)))
-    } )
-    .catch(err => console.log(err))
-    .finally(() => {
-      setLoading(false)
-    })
+      const docRef = doc(db, "productos", itemId);
+      getDoc(docRef)
+      .then((doc) => {
+       setItem({id: doc.id, ...doc.data()});
+      }) 
+      .finally(()=>{
+        setLoading(false);
+      })
+
+
+   
     }, [itemId, setLoading]);
    
 

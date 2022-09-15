@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./ItemListContainer.module.scss"
-import { pedirDatos } from "../../../helpers/pedirDatos"
 import ItemList from '../ItemList/ItemList';
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from "react-router-dom"; 
+import { collection, getDocs, query, where  } from "firebase/firestore";
+import { db} from "../../../firebase/firebaseConfig";
 
 
 
@@ -19,20 +20,20 @@ const ItemListContainer = () => {
   useEffect(() => {
     setLoading(true)
 
-    pedirDatos(true)
-      .then( (res) => {
-        if(!categoryId){
-          setProductos(res)
-        } else{
-          setProductos(res.filter((prod) => prod.categoria === categoryId))
-        }
-      })
-      .catch((err) =>{
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading(false)
+    //1- Armar la referencia (sync)
+    const productosRef = collection(db, "productos"); 
+    const q = categoryId ?  query(productosRef, where("categoria", "==", categoryId)) : productosRef; 
+    //2- Consumir la referencia (asynch)
+    getDocs(q)
+    .then((resp) => {
+      const productos = resp.docs.map((doc)=> ({id: doc.id, ...doc.data()}));
+      setProductos(productos)
     })
+
+    .finally(() =>{
+      setLoading(false)
+    })
+
     }, [categoryId]);
 
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../../Context/CartContext';
 import styles from "./Cart.module.scss";
@@ -39,7 +38,7 @@ const Cart = () => {
                   <p>Precio Acumulado: ${priceProduct(item.id)}</p>
                   </div>
                    <div className='col-2 mt-3'>
-                    <p>Cantidad: {item.counter}</p>
+                    <p>Cantidad: {item.counter} </p>
                    </div>
                    <div className='col-3'>
                    <button onClick={() => removeItem(item.id)} className="btn btn-danger">Eliminar</button>
