@@ -98,6 +98,7 @@ const Checkout = () => {
 
             })
       } else {
+        
         alert("Hay items sin stock")
         console.log(outOfStock);
       }   
