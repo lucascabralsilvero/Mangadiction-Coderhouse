@@ -44,7 +44,12 @@ const ItemDetail = ({item}) => {
              <p> <b> Precio:</b> ${item.precio}</p>
              <p> <b> Stock: </b> {item.stock}</p>             
 
-        {
+         {
+
+          item.stock === 0 
+           ? 
+           <button className='btn btn-danger disabled'>No hay stock disponible</button>
+           :
           isInCart(item.id)
           ? <Link to="/cart" className='btn btn-success my-2'>Terminar Compra</Link>  
           : <ItemCount 

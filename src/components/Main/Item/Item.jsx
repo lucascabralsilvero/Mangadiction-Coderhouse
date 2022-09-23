@@ -10,7 +10,14 @@ const Item = ({ producto }) => {
                 <img src={producto.img}  alt="" />
                 <h4 className='mt-2'>{producto.nombre}</h4>
                 <p>Precio: ${producto.precio}</p>
-                <p>Stock: {producto.stock}</p>
+                <p>{
+
+                producto.stock === 0 ?
+                 <>
+                 <button className='btn btn-danger disabled'>No hay stock disponible</button>
+                </>
+                : <p>Stock: {producto.stock}</p> 
+                }</p>
                 <Link className='btn btn-primary my-2' to={`/item/${producto.id}`}>Ver más</Link>  
 
                 {(() =>{
