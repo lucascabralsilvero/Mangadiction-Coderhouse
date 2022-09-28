@@ -9,7 +9,7 @@ const AppRouter = () => {
 
   return (
     <BrowserRouter>
-      {user.logged ? <PrivateRoutes /> : <PublicRoutes />}
+      {user ? <PrivateRoutes /> : <PublicRoutes />}
     </BrowserRouter>
   );
 };

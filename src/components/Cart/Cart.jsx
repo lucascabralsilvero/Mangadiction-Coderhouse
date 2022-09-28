@@ -25,22 +25,22 @@ const Cart = () => {
 
       {cart.map((item) => (
           <div key={item.id}>
-            <div className='row d-flex align-items-center flex-wrap text-center'>
+            <div className='row d-flex align-items-center flex-wrap text-center '>
 
-                  <div className='col-2'>
+                  <div className='col-md-2 col-sm-3'>
                     <img className={styles.cover} src={item.img} alt="" />
                   </div>
-                 <div className='col-3'>
-                  <h3 className='fs-3'>{item.nombre}</h3>
+                 <div className='col-md-3 col-sm-2'>
+                  <h3 className='fs-md-3 fs-5'>{item.nombre}</h3>
                  </div>  
-                  <div className='col-2 mt-3'>
+                  <div className='col-md-2 col-sm-2 mt-3'>
                   <p>Precio Unitario: ${item.precio}</p>
                   <p>Precio Acumulado: ${priceProduct(item.id)}</p>
                   </div>
-                   <div className='col-2 mt-3'>
+                   <div className='col-md-2 col-sm-2 mt-3'>
                     <p>Cantidad: {item.counter} </p>
                    </div>
-                   <div className='col-3'>
+                   <div className='col-sm-3'>
                    <button onClick={() => removeItem(item.id)} className="btn btn-danger">Eliminar</button>
                    </div>
                   

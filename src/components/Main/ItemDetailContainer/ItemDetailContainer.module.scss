@@ -4,5 +4,11 @@
 }
 
 .bodyHeight{
-    min-height:90vh;
+    min-height:79.5vh;
+}
+
+@media only screen and (max-width:720px){
+    .bodyHeight{
+        margin-top:6.5rem
+    }
 }

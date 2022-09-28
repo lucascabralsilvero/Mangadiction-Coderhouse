@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useCartContext } from '../../Context/CartContext';
 import styles from "./Checkout.module.scss"; 
-import { addDoc, collection, doc, getDocs, writeBatch, query, where, documentId } from "firebase/firestore"; 
+import { addDoc, collection, getDocs, writeBatch, query, where, documentId } from "firebase/firestore"; 
 import { db } from '../../firebase/firebaseConfig';
-import ItemDetail from '../Main/ItemDetail/ItemDetail';
+import Swal from 'sweetalert2';
 
 
 
@@ -95,12 +95,16 @@ const Checkout = () => {
             .then( (doc) => {
                 checkout(doc.id)
             }) 
-
-            })
+        })
       } else {
-        
-        alert("Hay items sin stock")
-        console.log(outOfStock);
+
+        Swal.fire({
+            text: `Hay items sin stock: ${outOfStock.map((item) => item.nombre)}` ,
+            icon: 'warning',
+            showCancelButton: false,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'OK!'
+          })
       }   
     }
 

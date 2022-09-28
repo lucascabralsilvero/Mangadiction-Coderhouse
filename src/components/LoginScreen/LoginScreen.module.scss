@@ -1,3 +1,19 @@
-.height{
-    min-height: 90vh;
+.bgStyles{
+    min-height: 100vh;
+    background: #F3904F;  
+    background: -webkit-linear-gradient(to bottom, #3B4371, #F3904F);  
+    background: linear-gradient(to bottom, #3B4371, #F3904F); 
 }
+
+.loginCard{
+    border-radius: 20px;
+    width: fit-content;
+    border: 2px solid orange;
+    padding: 3.5rem;
+    margin: 4rem auto ;
+}
+
+.asd{
+    width: fit-content;
+}
+

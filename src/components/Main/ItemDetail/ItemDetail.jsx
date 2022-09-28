@@ -30,17 +30,17 @@ const ItemDetail = ({item}) => {
   return (
     <div  className={` ${styles.itemDetail} container `}>
 
-     <div className="row d-flex">
-        <div className="col-1">
+     <div className="row d-flex flex-column justify-content-center align-content-sm-center align-content-start flex-lg-row ">
+        <div className="col-1 ">
         <Link className=' fs-5 text-danger' to={`/categorias/${item.categoria}`}> &laquo; Volver</Link>    
         </div>
-        <div className='col-3'>     
+        <div className='col-4 col-xxl-3 col-xl-4'>     
             <img  src={item.img} alt="" />
         </div>
 
-        <div className="col-8 ">
-             <h1 className='mt-2 '> {item.nombre}</h1>
-             <p className='mt-3'>{item.desc}</p>
+        <div className="col-7  col-xxl-8 col-xl-7 ">
+             <h1 className='mt-2 bg-success'> {item.nombre}</h1>
+             <p className='mt-3 bg-success  '>{item.desc}</p>
              <p> <b> Precio:</b> ${item.precio}</p>
              <p> <b> Stock: </b> {item.stock}</p>             
 
