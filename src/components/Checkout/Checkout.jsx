@@ -78,9 +78,6 @@ const Checkout = () => {
     productos.docs.forEach((doc) => {
       const itemInCart = cart.find((item) => item.id === doc.id);
 
-      console.log(doc.data().stock);
-      console.log(itemInCart);
-
       if (doc.data().stock >= itemInCart.counter) {
         batch.update(doc.ref, {
           stock: doc.data().stock - itemInCart.counter,

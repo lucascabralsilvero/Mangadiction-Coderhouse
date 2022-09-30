@@ -10,8 +10,6 @@ const CartWidget = () => {
   
   const {cartQuantity} = useCartContext();
 
-  console.log(cartQuantity)
-
   return (
 
   <div className='position-relative'> 

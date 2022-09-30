@@ -22,7 +22,6 @@ const LoginScreen = () => {
       })
       .catch(function (error) {
         let errorCode = error.code;
-        console.log(errorCode);
         if (errorCode === "auth/email-already-in-use") {
           Swal.fire("El mail ya se encuentra en uso");
         } else if (errorCode === "auth/weak-password") {
@@ -46,7 +45,6 @@ const LoginScreen = () => {
       signInWithEmailAndPassword(auth, email, password)
       .catch(function (error) {
         let errorCode = error.code;
-        console.log(errorCode);
         if (errorCode === "auth/wrong-password"){ 
           Swal.fire("Contraseña incorrecta!")
         } else if(errorCode === "auth/user-not-found"){
