@@ -15,6 +15,7 @@ export const LoginProvider =  ({children}) =>{
     onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){
             setUser(firebaseUser)
+            
             console.log(firebaseUser)
 
         } else {

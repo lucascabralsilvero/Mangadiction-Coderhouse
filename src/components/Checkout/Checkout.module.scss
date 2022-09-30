@@ -1,4 +1,11 @@
 .checkoutView{
-    min-height: 85vh;
-    padding-top: 5rem;
+    min-height: 74.5vh;
+}
+
+
+@media only screen and (max-width:720px){
+    .checkoutView{
+        min-height: 85.2vh;
+        padding-top: 5rem;
+    }
 }

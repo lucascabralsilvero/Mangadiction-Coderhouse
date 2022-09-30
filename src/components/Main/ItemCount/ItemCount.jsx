@@ -18,7 +18,6 @@ const ItemCount = ({ stock, counter, setCounter, handleAdd}) => {
         };
     };
 
-  
 
   return (
       <div className={` ${styles.count} d-flex  flex-column  ` }>
@@ -30,7 +29,8 @@ const ItemCount = ({ stock, counter, setCounter, handleAdd}) => {
           <Button onClick = {handlerAddition} variant="secondary">+</Button>
         </div>
         <div className='mb-3' >
-           <Button  onClick={handleAdd} variant='primary'>Agregar al carrito</Button>
+      <Button  onClick={handleAdd} variant='primary'>Agregar al carrito</Button>
+
         </div>
       </div>
   )

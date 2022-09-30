@@ -28,8 +28,6 @@ const ItemDetailContainer = () => {
         setLoading(false);
       })
 
-
-   
     }, [itemId, setLoading]);
    
 

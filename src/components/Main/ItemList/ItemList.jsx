@@ -11,7 +11,7 @@ const ItemList = ( {productos = []} ) => {
           <div className='row'>
             <div className='col-12 bg-light d-flex flex-wrap justify-content-center justify-content-md-between '>
             {productos.map((el) => {
-              return <Item producto = {el} key={el.id}/>
+              return <Item producto={el} key={el.id}/>
             } )}
               </div>
           </div>

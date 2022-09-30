@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 import {  useCartContext } from '../../../Context/CartContext';
 
 
+
 const ItemDetail = ({item}) => {
 
   const {  addToCart, isInCart } = useCartContext(); 
+
+  
+  
 
 
 
@@ -39,8 +43,8 @@ const ItemDetail = ({item}) => {
         </div>
 
         <div className="col-7  col-xxl-8 col-xl-7 ">
-             <h1 className='mt-2 bg-success'> {item.nombre}</h1>
-             <p className='mt-3 bg-success  '>{item.desc}</p>
+             <h1 className='mt-2 '> {item.nombre}</h1>
+             <p className='mt-3 '>{item.desc}</p>
              <p> <b> Precio:</b> ${item.precio}</p>
              <p> <b> Stock: </b> {item.stock}</p>             
 
