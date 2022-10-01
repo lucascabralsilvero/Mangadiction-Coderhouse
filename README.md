@@ -45,5 +45,5 @@ Sino copiar esta URL y pegarla en el navegador: http://localhost:3000
 
 ## Deploy
 
-**Mira el sitio en vivo aquí :** [Mangadiction.netlify](https://app.netlify.com/sites/mangadiction-coderhouse "Mangadiction")
+**Mira el sitio en vivo aquí :** [Mangadiction.netlify](https://mangadiction-coderhouse.netlify.app/ "Mangadiction")
 
